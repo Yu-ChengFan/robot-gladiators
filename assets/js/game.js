@@ -1,5 +1,5 @@
 var randomNumber = function(min, max) {
-    var value = math.floor(Math.random()*(max - min + 1) + min)
+    var value = Math.floor(Math.random()*(max - min + 1) + min);
     return value
 };
 
@@ -9,7 +9,7 @@ var fight = function(enemy) {
         if (promptFight === "skip" || promptFight === "SKIP") {
             var confirmSkip = window.confirm("Are you sure you'd like to quit?");
             if (confirmSkip) {
-                window.alert(player.Info.name + ' has decided to skip this fight. Goodbye!');
+                window.alert(playerInfo.name + ' has decided to skip this fight. Goodbye!');
                 playerInfo.money = Math.max(0, playerInfo.money - 10);
                 console.log("playerInfo.money", playerInfo.money);
                 break;
@@ -77,8 +77,7 @@ var endGame = function() {
     var playAgainConfirm = window.confirm("Would you like to play again?");
     if (playAgainConfirm) {
         startGame();
-    }
-    else {
+    } else {
         window.alert("Thank you for playing Robot Gladiators! Come back soon!");
     }
 };
@@ -114,9 +113,9 @@ var playerInfo = {
     money : 10,
     reset: function() {
         if (this.money >= 7) {
-            window.alert("Refilling player's health by 20 for 7 dollars.")
-            this.health += 20;
-            this.money -= 7;
+            this.health = 100;
+            this.money = 10;
+            this.attack = 10;
         }
     },
     refillHealth: function() {
