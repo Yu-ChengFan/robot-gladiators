@@ -101,10 +101,9 @@ var endGame = function() {
     if (playerInfo.money > highScore) {
         localStorage.setItem("highscore", playerInfo.money);
         localStorage.setItem("name", playerInfo.name);
-    
         alert(playerInfo.name + " now has the high score of " + playerInfo.money + "!");
     } else {
-        alert(playerInfo.name + " did not beat the high score of " + highScore + ". Maybe next time!");
+        alert(playerInfo.name + " did not beat the high score of " + highScore + ", " + playerInfo.name + " had a high score of" + playerInfo.money + "instead. Maybe next time!");
     }
     
     var playAgainConfirm = window.confirm("Would you like to play again?");
